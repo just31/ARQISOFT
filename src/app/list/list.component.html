@@ -1,0 +1,41 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h3>List products</h3>
+</div>
+
+<div id="preloader" class="preloader__visible"></div>
+
+<div class="container">
+  <div class="card-deck card-deck_fix card-deck_fix_new mb-3 text-center">
+
+    <!--Display the value of Observable array on the page.-->
+    <div class="card card__fix card__fix_new mb-4 box-shadow" *ngFor='let item of myObservableArray | async'>
+      <div class="card-header card-header_line">
+        <h4 class="my-0 font-weight-normal">{{ item.name }}</h4>
+      </div>
+      <img class="card__img" src="{{item.img}}">
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ item.price }}</h1>
+        <a href="javascript:void(0);" type="button" class="btn btn-lg btn-block btn-primary" [routerLink]="['details', item.id]" (click)="addCount()">More</a>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
+          <div class="d-flex d-flex__column justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3__top">
+
+            <a href="/">Dashboard</a>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

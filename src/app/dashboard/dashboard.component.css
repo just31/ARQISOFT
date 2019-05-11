@@ -1,0 +1,18 @@
+.pt-3__top {
+  padding-top: 3rem !important;
+}
+
+.sidebar-sticky__top {
+  margin-top: 50px;
+}
+
+.bg-dark {
+  height: 50px;
+}
+
+.container-form {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}

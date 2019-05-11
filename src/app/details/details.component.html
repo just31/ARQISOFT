@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card-deck card-deck_fix mb-3 text-center">
+
+    <div class="card card__fix mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ name }}</h4>
+      </div>
+      <img class="card__img" src="{{img}}">
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ price }}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{ description }}</li>
+          <li>View count: {{count}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
+          <div class="d-flex d-flex__column justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3__top">
+
+            <a href="/list">Go back to list</a>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </div>
+</div>

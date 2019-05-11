@@ -1,0 +1,82 @@
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+
+.d-flex__column {
+  flex-direction: column;
+}
+
+.card-deck_fix {
+  justify-content: center;
+}
+
+.card__fix {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: auto;
+  width: 250px;
+}
+
+.card-header_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__delete {
+  color: #000000;
+}
+
+.card__img {
+  object-fit: contain;
+}
+
+.container-form {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card__fix_new {
+  display: flex;
+  flex: inherit;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-left: 5px;
+  width: 260px;
+}
+
+.card-deck_fix_new {
+  justify-content: flex-start;
+}
+
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  overflow-y: scroll;
+  background: url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+}
+
+.preloader__visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.preloader__hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}

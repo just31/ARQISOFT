@@ -1,0 +1,82 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/list">Beauty Catalog - List</a>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky sidebar-sticky__top">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/list">
+              <span data-feather="file"></span>
+              List products
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pt-3__top pb-2 mb-3">
+        <h1 class="h2">Dashboard</h1>
+      </div>
+
+      <div class="table">
+        <table class="table able-sm">
+          <thead>
+          <tr>
+            <th>Name product</th>
+            <th>Price</th>
+            <th>View count</th>
+            <th>Del</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!--Display the value of the localstorage data model on the page-->
+          <tr *ngFor="let product of products; let i = index">
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.count }}</td>
+            <td><button type="button" class="btn btn-dark" (click)="deleteItem(i)">x</button></td>
+          </tr>
+          <tr>
+            <td colspan="4"><h3>Number of products - {{products_length}}</h3></td>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container container-form">
+        <h4>Add new items to catalog</h4>
+        <form #myForm="ngForm" [formGroup]="profileForm" (ngSubmit)="onSubmit(); myForm.reset();">
+          <div class="form-group">
+            <label for="nameProduct">Name product</label>
+            <input type="text" class="form-control" id="nameProduct" formControlName="nameProduct" placeholder="name product">
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price" placeholder="price">
+          </div>
+          <div class="form-group">
+            <label for="price">Description</label>
+            <input type="text" class="form-control" id="description" formControlName="description" placeholder="description">
+          </div>
+
+          <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+
+
