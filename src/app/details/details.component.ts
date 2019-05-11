@@ -13,12 +13,12 @@ export class DetailsComponent implements OnInit {
   products:any[] = localStorage.getItem("object2") ? JSON.parse(localStorage.getItem("object2")) : JSON.parse(localStorage.getItem("object"));
 
   // Declare variables to display them in the item card.
-  private id: number;
-  private name: string;
-  private price: string;
-  private count: number;
-  private description: string;
-  private img: string;
+  id: number;
+  name: string;
+  price: string;
+  count: number;
+  description: string;
+  img: string;
 
   private subscription: Subscription;
 
