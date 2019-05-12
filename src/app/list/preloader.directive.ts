@@ -15,7 +15,7 @@ export class PreloaderDirective {
   }
 
   // Realize preloader.
-  loadData(): void {
+  loadData(): any {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, 2000);
     })
