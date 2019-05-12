@@ -29,20 +29,6 @@ export class ListComponent implements OnInit {
   products_length:number = this.products.length;
 
   ngOnInit() {
-
-    // Realize preloader.
-    function loadData() {
-      return new Promise((resolve, reject) => {
-        setTimeout(resolve, 2000);
-      })
-    }
-    loadData()
-      .then(() => {
-        let preloaderEl = document.getElementById('preloader');
-        preloaderEl.classList.add('preloader__hidden');
-        preloaderEl.classList.remove('preloader__visible');
-      });
-
   }
 
 
