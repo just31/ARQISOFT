@@ -8,12 +8,14 @@ import { ListComponent } from './list.component';
 //Import the observable data service.
 import { MyService } from './list.service';
 
+import { PreloaderDirective } from './preloader.directive';
+
 const routes: Routes = [
   { path: '', component: ListComponent }
 ];
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, PreloaderDirective],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
