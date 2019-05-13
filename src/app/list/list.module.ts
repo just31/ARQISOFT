@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ListComponent } from './list.component';
 
-//Import the observable data service.
+// Import the observable data service.
 import { MyService } from './list.service';
 
 import { PreloaderDirective } from './preloader.directive';

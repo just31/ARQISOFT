@@ -1,14 +1,14 @@
 import {Directive, ElementRef} from '@angular/core';
 
 @Directive({
-  selector: '[preloader]'
+  selector: '[appPreloader]'
 })
 export class PreloaderDirective {
 
   constructor(private elementRef: ElementRef) {
     this.loadData()
       .then(() => {
-        let preloaderEl = this.elementRef.nativeElement;
+        const preloaderEl = this.elementRef.nativeElement;
         preloaderEl.classList.add('preloader__hidden');
         preloaderEl.classList.remove('preloader__visible');
       });
@@ -18,7 +18,7 @@ export class PreloaderDirective {
   loadData(): any {
     return new Promise((resolve, reject) => {
       setTimeout(resolve, 2000);
-    })
+    });
   }
 
 }

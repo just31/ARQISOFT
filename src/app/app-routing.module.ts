@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-//We configure lazy load of application modules.
+// We configure lazy load of application modules.
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },

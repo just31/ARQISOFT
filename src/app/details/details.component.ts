@@ -3,14 +3,15 @@ import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: '',
+  selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
 
-  //Get data from the localstorage model.
-  products:any[] = localStorage.getItem("object2") ? JSON.parse(localStorage.getItem("object2")) : JSON.parse(localStorage.getItem("object"));
+  // Get data from the localstorage model.
+  products: any[] = localStorage.getItem('object2') ? JSON.parse(localStorage.getItem('object2')) :
+    JSON.parse(localStorage.getItem('object'));
 
   // Declare variables to display them in the item card.
   id: number;
@@ -24,12 +25,12 @@ export class DetailsComponent implements OnInit {
 
   constructor(private activateRoute: ActivatedRoute) {
 
-    this.subscription = activateRoute.params.subscribe(params=> {
+    this.subscription = activateRoute.params.subscribe(params => {
         // Find the product id from the routing parameters.
-        this.id = params['id'];
+        this.id = params.id;
 
         // Find by this id the same value in the model.
-        let search = this.products.find(item => item.id === Number(this.id));
+        const search = this.products.find(item => item.id === Number(this.id));
 
         // Fill in the variables for each individual card.
         this.name = search.name;
@@ -42,16 +43,17 @@ export class DetailsComponent implements OnInit {
 
 
         // Convert a string from localstorage to an object.
-        this.products = JSON.parse(localStorage.getItem("object2"));
+        this.products = JSON.parse(localStorage.getItem('object2'));
 
         // Find index of specific object using findIndex method.
-        let objIndex = this.products.findIndex((obj => obj.id == this.id));
+
+        const objIndex = this.products.find(item => item.id === Number(this.id));
 
         // Update object name property, at  the find the product id.
-        this.products[objIndex].count = this.count;
+        objIndex.count = this.count;
 
        // Writing a new value count, to localstorage.
-        localStorage.setItem("object2", JSON.stringify(this.products));
+        localStorage.setItem('object2', JSON.stringify(this.products));
 
       }
     );
