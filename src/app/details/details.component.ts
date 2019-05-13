@@ -40,6 +40,19 @@ export class DetailsComponent implements OnInit {
         // The value of the view counter is increased by 1.
         this.count++;
 
+
+        // Convert a string from localstorage to an object.
+        this.products = JSON.parse(localStorage.getItem("object2"));
+
+        // Find index of specific object using findIndex method.
+        let objIndex = this.products.findIndex((obj => obj.id == this.id));
+
+        // Update object name property, at  the find the product id.
+        this.products[objIndex].count = this.count;
+
+       // Writing a new value count, to localstorage.
+        localStorage.setItem("object2", JSON.stringify(this.products));
+
       }
     );
   }

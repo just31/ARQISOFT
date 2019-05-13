@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
 
   products_length:number = this.products.length;
 
+  products_count:number;
+
   // Add a new value to the catalog.
   onSubmit():any {
 
@@ -57,6 +59,14 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     //console.log(JSON.parse(localStorage.getItem("object2")));
+
+    let sum = 0;
+    for(let i = 0; i < this.products.length; i++){
+      sum = sum + parseInt(this.products[i].count);
+    }
+
+    this.products_count = sum;
+
   }
 
 }
