@@ -5,4 +5,4 @@ To install the necessary dependencies, run: **npm install --save-dev**. Next, ru
 
 The application runs at - http://localhost:4200.
 
-View in browser at the address - https://just31.github.io.
+View in browser at the address - https://just31.github.io/arqisoft.
