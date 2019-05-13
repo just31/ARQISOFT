@@ -42,6 +42,16 @@ export class DashboardComponent implements OnInit {
     this.products = JSON.parse(localStorage.getItem("object2"));
   }
 
+
+  private sum_views(): any {
+    let sum = 0;
+    for(let i = 0; i < this.products.length; i++){
+      sum = sum + parseInt(this.products[i].count);
+    }
+
+    return this.products_count = sum;
+  }
+
   // Remove the selected value from the catalog.
   deleteItem(index):any {
     if(localStorage.getItem("object2")) {
@@ -55,18 +65,14 @@ export class DashboardComponent implements OnInit {
     }
     // Get a new length of the array, after delete item to the catalog. To output it, in the number of products dashboard.
     this.products_length = this.products.length;
+
+    this.sum_views();
   }
 
   ngOnInit() {
     //console.log(JSON.parse(localStorage.getItem("object2")));
 
-    let sum = 0;
-    for(let i = 0; i < this.products.length; i++){
-      sum = sum + parseInt(this.products[i].count);
-    }
-
-    this.products_count = sum;
-
+    this.sum_views();
   }
 
 }
